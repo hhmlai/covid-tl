@@ -81,7 +81,7 @@ def main():
         data = fetch_data("OWD", country)
         time = (datetime.now(timezone.utc) - data['timestamp']).total_seconds()/8600
         print(time)
-        if time > 24:
+        if time > 8:
                 df = update()
         else:
                 df = pd.read_json(data['data'])
